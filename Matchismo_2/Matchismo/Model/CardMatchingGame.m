@@ -38,7 +38,12 @@
 }
 -(NSMutableDictionary*) gameHistory
 {
-    return _gameHistory ? _gameHistory : (_gameHistory = [[NSMutableDictionary alloc]initWithDictionary:@{@"action":@"",@"action_score": @"",@"card_objects":@[]}]);
+    return _gameHistory ? _gameHistory : (_gameHistory = [[NSMutableDictionary alloc]
+                                                          initWithDictionary:
+                                                          @{@"action":@"",
+                                                            @"action_score": @"",
+                                                            @"card_objects": @[]
+                                                          }]);
 }
 
 - (int) score
