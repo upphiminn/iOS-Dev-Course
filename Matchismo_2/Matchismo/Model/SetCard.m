@@ -116,7 +116,10 @@
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
-    if([otherCards count] == 2){
+    if([otherCards count] == 2)
+     if(([otherCards[0] isKindOfClass:[SetCard class]])&&
+        ([otherCards[1]  isKindOfClass:[SetCard class]]))
+     {
         NSArray* cards = [otherCards arrayByAddingObject:self];
         NSMutableDictionary* colors = [NSMutableDictionary dictionary],
         *shadings   = [NSMutableDictionary dictionary],
