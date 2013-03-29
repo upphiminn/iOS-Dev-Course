@@ -80,7 +80,7 @@
 - (void) setFlipCount:(int)flipCount
 {
     _flipCount = flipCount;
-    self.flipsLabel.text = [ NSString stringWithFormat:@"Flips %d", self.flipCount];
+    self.flipsLabel.text = [ NSString stringWithFormat:@"Flips: %d", self.flipCount];
 }
 
 - (void) setGameScore:(int)gameScore
@@ -117,7 +117,7 @@
          Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         [self updateCardButton:cardButton withCard:card];
     }
-    [self setGameScore:self.game.score];
+    [self setGameScore: self.game.score];
     [self setGameHistory];
 }
 
@@ -126,6 +126,7 @@
     [self.game resetWithDeck:[self deck]];
     self.flipsLabel.text        = @"Flips: 0";
     self.gameResult = nil;
+    self.flipCount = 0;
     [self updateUI];
 }
 
