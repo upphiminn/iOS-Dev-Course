@@ -30,14 +30,18 @@
     _photoURL = photoURL;
     [self resetPhoto];
 }
+- (void) setAppropriateZoomScale
+{
+    CGFloat widthZoomScale  = self.scrollView.bounds.size.width / self.photoView.image.size.width;
+    CGFloat heightZoomScale = self.scrollView.bounds.size.height / self.photoView.image.size.height;
+    self.scrollView.minimumZoomScale = (widthZoomScale > heightZoomScale)? widthZoomScale:heightZoomScale;
+    [self.scrollView zoomToRect:self.photoView.bounds animated:NO];
 
+}
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    CGFloat widthZoomScale  = self.scrollView.bounds.size.width / self.photoView.image.size.width;
-    CGFloat heightZoomScale = self.scrollView.bounds.size.height / self.photoView.image.size.height;
-    self.scrollView.zoomScale = (widthZoomScale > heightZoomScale)? widthZoomScale:heightZoomScale;
-
+    [self setAppropriateZoomScale];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -72,10 +76,12 @@
         UIImage *photo      = [[UIImage alloc] initWithData:photoData];
         // flickr can return NULL (NSObject)
         if (photo) {
-            self.scrollView.zoomScale = 1.0;
+            [self setAppropriateZoomScale];
             self.scrollView.contentSize = photo.size;
             self.photoView.image = photo;
             self.photoView.frame = CGRectMake(0, 0, photo.size.width, photo.size.height);
+     
+
         }
     }
 }
