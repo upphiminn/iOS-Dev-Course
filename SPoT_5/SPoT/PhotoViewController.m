@@ -70,7 +70,7 @@
 - (void) viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    self.photoView.image = nil;
+    //self.photoView.image = nil;
 }
 - (void)setTitle:(NSString *)title
 {
