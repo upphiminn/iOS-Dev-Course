@@ -1,11 +1,23 @@
 s111023
 =======
+---
+##Assigment 5
+###Done all required tasks
+![Screen1](m5_1.jpg)
+![Screen1](m5_2.jpg)
+![Screen1](m5_3.jpg)
+
+---
+##Assigment 4
+###Done all required tasks
+---
+
 ##Assigment 3
 ![Screen1](m3_1.jpg)
 ![Screen1](m3_2.jpg)
 ![Screen1](m3_3.jpg)
 
-	Have done only the required tasks.
+	Have done all the required tasks.
 	
 1. ~~Create an application that plays both the Set game (single player) in one tab and the Playing Card matching game in another.~~2. ~~You must use polymorphism to design your Controllers for the two games (i.e. youmust have a (probably abstract) base card game Controller class and your Set gameand Playing Card game Controllers must be subclasses thereof).~~3. ~~For Set, 12 cards should be initially dealt and Set cards should always show what’s onthem even if they are technically “face down”. For the Playing Card game deal 22cards, all face down.~~4. ~~The user must then be able to choose matches just like in last week’s assignment.~~5. ~~When a Set match is successfully chosen, the cards should be removed from the game (not just blanked out or grayed out, but actually removed from the user-interface and the remaining cards rearranged to use up the space that was freed up in the userinterface).~~6. ~~Set cards must have the “standard” Set look and feel (i.e. 1, 2 or 3 squiggles, diamonds or ovals that are solid, striped or unfilled, and are either green, red or purple). You must draw these using Core Graphics and/or UIBezierPath. You may not use imagesor attributed strings. Use the PlayingCardView from the in-class demo to draw yourPlaying Card game cards.~~
 7. ~~In the Set game (only), the user must always have the option somewhere in the UI ofrequesting 3 more cards to be dealt at any time if he or she is unable to locate a Set.~~
