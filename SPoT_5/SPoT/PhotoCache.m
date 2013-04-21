@@ -18,24 +18,21 @@
 #define CACHE_BYTES_SIZE 3.146e+6 
 //Size is set to 3 megabytes
 
-// Using the same NSFileManger instance from different threads would not be safe,
-// one global photocache instance would have just one file manager (not safe).
-// alternatively to current implementation we could synchronize methods most probably.
+static PhotoCache *cacheInstance;
 
-//static PhotoCache *cacheInstance;
-//+ (void) initialize
-//{
-//    static BOOL initialized = NO;
-//    if(!initialized)
-//    {
-//        initialized = YES;
-//        cacheInstance = [[PhotoCache alloc] init];
-//    }
-//}
++ (void) initialize
+{
+    static BOOL initialized = NO;
+    if(!initialized)
+    {
+        initialized = YES;
+        cacheInstance = [[PhotoCache alloc] init];
+    }
+}
 
 - (NSFileManager*) fileManager
 {
-    return _fileManager ? _fileManager : (_fileManager = [[NSFileManager alloc] init]);
+    return _fileManager ? _fileManager : (_fileManager = [NSFileManager defaultManager]);
 }
 
 - (NSURL*) cacheDir
@@ -60,13 +57,13 @@
 
 + (BOOL) isIdentifierInCache:(NSString*) identifier
 {
-    PhotoCache* cache = [[PhotoCache alloc] init];
+    PhotoCache* cache = cacheInstance;
     return [cache hasCachedFile:identifier];
 }
 
 + (NSData*) retrieveDataForIdentifier:(NSString*) identifier
 {
-    PhotoCache* cache = [[PhotoCache alloc] init];
+    PhotoCache* cache = cacheInstance;
     [cache updateModificationDateForFile:identifier];
     return [cache getDataForFile: identifier];
 }
@@ -74,7 +71,7 @@
 + (void) storeData:(NSData*) data withIdentifier:(NSString*) identifier
 {
     if(data){
-        PhotoCache* cache = [[PhotoCache alloc] init];
+        PhotoCache* cache = cacheInstance;
         if([cache hasCachedFile:identifier]){
             [cache updateModificationDateForFile:identifier];
         }
