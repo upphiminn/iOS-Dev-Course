@@ -1,6 +1,39 @@
-s111023
+##s111023 / Corneliu
 =======
+
+#Final Project
+
+
+![Screen1](poster.png)
+###Description
+As we know some categories of shops in Denmark (i.e. restaurants) are periodically inspected for issues regarding food safety and afterward given a grade, represented by a smiley, on how well they conform to food saftey measures.
+SmileyReport wants to be an easy accesible way to see the reports of restaurants nearby or in specific areas. Moreover, the user benifits from this information by getting notifications or alerts whenever he enters a restaurant that is below or equal to a given threshold. g
+
+###Features
+1. Ability to see ratings of restaurants nearby easily on the map
+2. Additional table view with historic data of inspections and category of resturant icon
+3. Possiblity to add restaurants to a favorites list
+4. Additional detailed pdf report on the latest inspection by pressing the right  callout of the annotation view.
+5. Editable list of favorites. Swipe to delte. Press the star on the table list to add.
+6. Editable alert threshold level and possibility to shut down the alerts.
+
+###Future features
+7. Search bar is not currently implemented, when it will, the user will be able
+to search directly with a restaurant name.
+8. Google Places integration instead of Forsquare.
+
+###Known Issues
+
+Forsquare data is often not precise, the resturants are placed at wrong coordinates
+(i.e. middle of streets), and there's not enough information to supply to the findsmiley crawler to get the exact shop. The crawler would be more precise if the Foresquare data was more accurate and include things like street number, postal code etc. This is why it would be best to move to the Google Places API. 
+
+The app will not be functional if it's turned off, all geofences are cleared when the app is terminated. Unfortunetly, even if a geofence would be maintained for a restaurant and the system would monitor for it (while our app is not running), applications are not currently allowed no more than 20 seconds of computation time if they are launched by a geofence border cross event. This is insufficient to update nearby places and make new Forsquare and FindSmiley requests and also set up new geofences. Apple advises not to even attempt any network activity when initialized by such an event.
+
+###### Standard region monitoring is also sometimes imprecise. more real world tests should be carried out. 
+
 ---
+---
+
 ##Assigment 5
 ###Done all required tasks
 ![Screen1](m5_1.jpg)
@@ -8,6 +41,7 @@ s111023
 ![Screen1](m5_3.jpg)
 
 ---
+
 ##Assigment 4
 ###Done all required tasks
 ---
