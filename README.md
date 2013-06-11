@@ -1,5 +1,5 @@
-##s111023 / Corneliu
-=======
+###s111023 / Corneliu
+===
 
 #Final Project
 
@@ -7,7 +7,7 @@
 ![Screen1](poster.png)
 ###Description
 As we know some categories of shops in Denmark (i.e. restaurants) are periodically inspected for issues regarding food safety and afterward given a grade, represented by a smiley, on how well they conform to food saftey measures.
-SmileyReport wants to be an easy accesible way to see the reports of restaurants nearby or in specific areas. Moreover, the user benifits from this information by getting notifications or alerts whenever he enters a restaurant that is below or equal to a given threshold. g
+SmileyReport wants to be an easy accesible way to see the reports of restaurants nearby or in specific areas. Moreover, the user benifits from this information by getting notifications or alerts whenever he enters a restaurant that is below or equal to a given threshold. **[More screenshots and short video link below]**
 
 ###Features
 1. Ability to see ratings of restaurants nearby easily on the map
@@ -29,7 +29,14 @@ Forsquare data is often not precise, the resturants are placed at wrong coordina
 
 The app will not be functional if it's turned off, all geofences are cleared when the app is terminated. Unfortunetly, even if a geofence would be maintained for a restaurant and the system would monitor for it (while our app is not running), applications are not currently allowed no more than 20 seconds of computation time if they are launched by a geofence border cross event. This is insufficient to update nearby places and make new Forsquare and FindSmiley requests and also set up new geofences. Apple advises not to even attempt any network activity when initialized by such an event.
 
-###### Standard region monitoring is also sometimes imprecise. more real world tests should be carried out. 
+###### Standard region monitoring is also sometimes imprecise. More real world tests should be carried out. 
+### Short Video Demo
+https://dl.dropboxusercontent.com/u/91270777/project/SmileyReport.m4v
+###More Screenshots
+![Screen1](screen1.png)
+![Screen2](screen2.png)
+![Screen3](screen3.png)
+![Screen4](screen4.png)
 
 ---
 ---
